@@ -16,12 +16,14 @@ class BillboardFragment : Fragment() {
     private lateinit var binding: FragmentBillboardBinding
 
 
+
     private lateinit var btnCreateNewMovie: FloatingActionButton
     private lateinit var starWarsCv: CardView
     private lateinit var harryPotterCv: CardView
 
     override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
 //        return inflater.inflate(R.layout.fragment_billboard, container, false)
@@ -41,7 +43,7 @@ class BillboardFragment : Fragment() {
 //            it.findNavController().navigate(R.id.action_billboardFragment_to_newMovieFragment)
 //        }
 
-        binding.btnNavCreateNewMovie.setOnClickListener {
+        binding.btnNavCreateNewMovie.setOnClickListener{
             it.findNavController().navigate(R.id.action_billboardFragment_to_newMovieFragment)
 
         }
@@ -53,6 +55,7 @@ class BillboardFragment : Fragment() {
         binding.harryPotterCardView.setOnClickListener {
             it.findNavController().navigate(R.id.action_billboardFragment_to_movieFragment)
         }
+
 
 
     }
