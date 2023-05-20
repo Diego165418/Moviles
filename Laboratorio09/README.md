@@ -1,6 +1,6 @@
-1. Una coroutine en Kotlin es una construcción de programación
-   concurrente que permite realizar tareas asíncronas de manera
-   secuencial y sin bloqueo explícito.
+# Pregunatas Laboratorio 09
+
+### 1. ¿Qué es una coroutine en Kotlin y cómo se diferencia de un hilo tradicional?
 
 A diferencia de un hilo tradicional, una coroutine no está asociada
 directamente con un hilo de ejecución subyacente. En lugar de eso, las
@@ -16,9 +16,11 @@ suspender y reanudar la ejecución sin necesidad de bloquear un hilo.
 Esto permite un mejor aprovechamiento de los recursos y una programación
 más eficiente en términos de rendimiento y consumo de memoria.
 
-2. ¿Cuál es la importancia de la suspensión en las coroutines y cómo se
-   implementa? La suspensión es una característica clave de las
-   coroutines en Kotlin y es fundamental para lograr una programación
+### 2. ¿Cuál es la importancia de la suspensión en las coroutines y cómo se   implementa?
+
+
+La suspensión es una característica clave de las
+coroutines en Kotlin y es fundamental para lograr una programación
    asíncrona y no bloqueante. Permite que una coroutine se detenga
    temporalmente sin bloquear el hilo de ejecución en el que se está
    ejecutando, liberando así los recursos asociados con ese hilo y
@@ -43,8 +45,9 @@ múltiples hilos para cada tarea. Esto facilita el desarrollo de código
 concurrente y mejora la eficiencia y la capacidad de respuesta de las
 aplicaciones.
 
-3. ¿Cuál es el propósito del Dispatcher en las coroutines y cómo se
-   elige uno adecuado para cada tarea? El Dispatcher en las coroutines
+### 3. ¿Cuál es el propósito del Dispatcher en las coroutines y cómo se   elige uno adecuado para cada tarea?
+
+El Dispatcher en las coroutines
    de Kotlin es responsable de determinar en qué hilo o hilo de
    ejecución se ejecutarán las coroutines. Es el encargado de
    administrar la asignación de hilos y la programación de las
@@ -58,21 +61,19 @@ específico.
 Al elegir un Dispatcher adecuado para una tarea, debes considerar los
 siguientes aspectos:
 
-1. Contexto de la tarea: Determina si la tarea está relacionada con la
+1. **Contexto de la tarea:** Determina si la tarea está relacionada con la
    interfaz de usuario (UI) o con operaciones de larga duración, como
    operaciones de E/S o llamadas a la red. En general, las tareas
    relacionadas con la UI deben ejecutarse en el hilo principal o en un
    Dispatcher específico para la UI, mientras que las tareas de larga
    duración se benefician de un Dispatcher que utilice hilos separados.
-
-2. Eficiencia y rendimiento: Algunos Dispatchers, como el Dispatcher.IO,
+2. **Eficiencia y rendimiento:** Algunos Dispatchers, como el Dispatcher.IO,
    están optimizados para realizar operaciones de E/S intensivas, como
    leer y escribir archivos o realizar llamadas a la red. Otros
    Dispatchers, como el Dispatcher.Default, se ajustan mejor para tareas
    de cómputo intensivo. Elegir el Dispatcher adecuado puede mejorar el
    rendimiento y la capacidad de respuesta de la aplicación.
-
-3. Concurrencia y paralelismo: Algunos Dispatchers permiten la ejecución
+3. **Concurrencia y paralelismo:** Algunos Dispatchers permiten la ejecución
    simultánea de múltiples coroutines, aprovechando así la capacidad de
    procesamiento paralelo de la CPU. Esto puede ser útil cuando se
    tienen tareas independientes y se desea una ejecución más rápida. Un
@@ -85,7 +86,7 @@ como Dispatchers.Main, Dispatchers.IO y Dispatchers.Default, pero
 también es posible crear y personalizar Dispatchers según las
 necesidades específicas de tu aplicación.
 
-4.¿Cuál es el propósito y el uso de la función async en las coroutines?
+### 4.¿Cuál es el propósito y el uso de la función async en las coroutines?
 La función `async` en las coroutines de Kotlin se utiliza para iniciar
 una nueva coroutine que devuelve un resultado asincrónicamente. Su
 propósito principal es realizar tareas de manera concurrente y
@@ -101,11 +102,9 @@ El uso básico de `async` es el siguiente:
 1. Se define una función `suspend` que realiza una tarea específica y
    devuelve un resultado. Esta función se marca con la palabra clave
    `suspend`.
-
 2. Se utiliza la función `async` para iniciar una nueva coroutine que
    ejecutará la función `suspend` y devolverá un objeto `Deferred` que
    representa el resultado futuro de la coroutine.
-
 3. Si se necesita obtener el resultado de la coroutine, se utiliza la
    función `await` en el objeto `Deferred`. Esta llamada a `await`
    bloquea de forma suspendible hasta que la coroutine completa su
